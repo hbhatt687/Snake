@@ -3,6 +3,8 @@
 # pylint: disable=C0103,C0111
 
 import tkinter as tk
+import matplotlib
+matplotlib.use('TkAgg')
 from snake.base import Pos, PointType
 
 
