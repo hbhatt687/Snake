@@ -26,8 +26,8 @@ Requirements: Python 3.5+ (64-bit) with [Tkinter][doc-tkinter] installed.
 ```
 $ pip3 install -r requirements.txt
 
-# Use -h for more details
-$ python3 run.py [-h]
+# Run the algorithm in real time
+$ python3 run.py 
 ```
 
 ## License
