@@ -13,11 +13,11 @@ I used two metrics to evaluate the performance of an AI:
 1. **Average Length:** Average length the snake has grown to (*max:* 64).
 2. **Average Steps:** Average steps the snake has moved.
 
-Test results (averaged over 1000 episodes):
+Test results (averaged over 100 episodes):
 
 | Solver | Demo (optimal) | Average Length | Average Steps |
 | :----: | :------------: | :------------: | :-----------: |
-|[Hamilton][doc-hamilton]|![][demo-hamilton]|63.93|717.83|
+|[Hamilton][doc-hamilton]|![][demo-hamilton]|60|700|
 
 ## Installation
 
