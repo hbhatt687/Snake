@@ -2,7 +2,9 @@
 # -*- coding: utf-8 -*-
 # pylint: disable=C0103,C0111
 
-"""Definition of class Point."""
+# @author: Harsh Bhatt
+# This file define the enumartion type point.
+# The main purpose of point is to act as one unit on our 64 unit playing field. 
 
 from enum import Enum, unique
 

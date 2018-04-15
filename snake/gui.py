@@ -2,6 +2,14 @@
 # -*- coding: utf-8 -*-
 # pylint: disable=C0103,C0111
 
+# @author: Harsh Bhatt
+# The main purpose of this file is to act as the graphical user interface.
+# This allowes us to see the game on the screen and watch the Hamilton
+# algorithm with shortcuts take place in real time. Much of the experimental
+# data is displayed on the GUI such as the number of steps. 
+# Much of this was done from Chuyang Liu's implementation as I was only
+# trying to work on the algorithm portion of the research. 
+
 import tkinter as tk
 import matplotlib
 matplotlib.use('TkAgg')

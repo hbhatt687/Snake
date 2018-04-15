@@ -2,7 +2,9 @@
 # -*- coding: utf-8 -*-
 # pylint: disable=C0103,C0111
 
-"""Definition of enum Direc."""
+# @author: Harsh Bhatt
+# This is the definition of the enumeration type: direc. 
+# It deals with the orientation of the map.
 
 from enum import Enum, unique
 

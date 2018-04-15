@@ -2,6 +2,14 @@
 # -*- coding: utf-8 -*-
 # pylint: disable=C0111,E1101
 
+# @author: Harsh Bhatt
+# The purpose of this file is to serve as the general path solver for the snake.
+# This class is critical in optimizing the hamiltion cycle portion of the
+# algortihm. It works by first finding the shortest path from the head 
+# to the food item. Then it increases this shortest path by one until it
+# eventually leads to the longest path from the head to the food item
+# while visiting every node at least once. 
+
 import sys
 import random
 from collections import deque

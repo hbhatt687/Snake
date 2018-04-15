@@ -1,7 +1,9 @@
 #!/usr/bin/env python3
 # -*- coding: utf-8 -*-
 
-"""Basic elements of Snake."""
+# @author: Harsh Bhatt
+# The main purpose of the file is to import the
+# main components used in the implementation of the game.
 
 from snake.base.direc import Direc
 from snake.base.pos import Pos

@@ -2,7 +2,11 @@
 # -*- coding: utf-8 -*-
 # pylint: disable=C0103,C0111,W0201,W0212
 
-"""Definition of class Map."""
+# @author: Harsh Bhatt
+# This file define the enumeration type for the two-dimensional map used in the game. 
+# The map is an 8x8 grid where one unit counts as one block for the snake to move in.
+# It is important to keep this map a contant even height and width for 
+# proper impementation of the alogorithm and the almighty move. 
 
 import random
 

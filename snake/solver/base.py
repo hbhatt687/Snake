@@ -2,9 +2,10 @@
 # -*- coding: utf-8 -*-
 # pylint: disable=C0111
 
-
+# @author: Harsh Bhatt
+# The purpose of this file is to serve as a super class for the Hamilton solver. 
+# It needs the snake object and the map as parameters in order to work. 
 class BaseSolver:
-    """Super class of all the solvers."""
 
     def __init__(self, snake):
         self._snake = snake

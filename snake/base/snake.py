@@ -2,7 +2,10 @@
 # -*- coding: utf-8 -*-
 # pylint: disable=C0103,C0111,W0201,W0212
 
-"""Definition of class Snake."""
+# @author: Harsh Bhatt
+# The main purpose of this file is to define the main class Snake. 
+# This files combines all of the elements together to show a working algorithm.
+# Most components are from Chuyang Liue's implementation. 
 
 import random
 from collections import deque
@@ -18,7 +21,7 @@ class Snake:
     def __init__(self, game_map, init_direc=None, init_bodies=None, init_types=None):
         """Initialize a Snake object.
 
-        Args:
+        Arguments:
             game_map (base.map.Map): The map that the snake moves on.
             init_direc (base.direc.Direc): Initial direction.
             init_bodies (list of base.pos.Pos): Initial snake bodies positions.

@@ -2,7 +2,10 @@
 # -*- coding: utf-8 -*-
 # pylint: disable=C0103,C0111
 
-"""Definitions of class Pos."""
+# @author: Harsh Bhatt
+# The main purpose of the file is to define the position class.
+# This will gie x and y coordinates to the snake on our 64 unit playing field. 
+
 
 from snake.base.direc import Direc
 
@@ -10,8 +13,9 @@ from snake.base.direc import Direc
 class Pos:
     """Integer coordinate in 2D plane.
 
-    The origin of the coordinate system is at the top-left corner,
-    with x-axis extends downward and y-axis extends rightward.
+    Our snake will start at the origin on the top left corner of the screen.
+    The orienation of the x-axis is downwards while the orientaion of
+    the y-axis is extended rightward.
 
     """
     def __init__(self, x=0, y=0):

@@ -2,6 +2,15 @@
 # -*- coding: utf-8 -*-
 # pylint: disable=C0103,C0111,W0201,W0703
 
+# @author: Harsh Bhatt
+# The main purpose of the file is to be a base layout for our game.
+# It will configure what type of algorithm is running on the game.
+# This makes it easier for future implementations of different
+# algorithms to be run on the same board for experimental results.
+# I have added useful features such as pausing the game to play it 
+# on your own with the arrow keys.
+# Much of my work was done on the alogirthm portion as that is where the
+# key reaserching was done. 
 import errno
 import os
 import traceback

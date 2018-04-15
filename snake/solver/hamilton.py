@@ -2,6 +2,17 @@
 # -*- coding: utf-8 -*-
 # pylint: disable=C0111,C0103
 
+# @author: Harsh Bhatt
+# This is the main algorithm that the snake will use to gain the most
+# amount of food items. It begins by creating a cycle that orders a 
+# small portion of the map in a Hamiltonian ordering. It must store 
+# the indexing this creates in a table structure for use in the
+# shortcuts portion of the algorithm. Once a cycle has been built, 
+# the snake may take shortcuts if the snake is not too long. 
+# Currently working on the steps IF the snake is too long, then
+# it is allowed to incporate the almighty move. Much of the resarch 
+# was done in this file and tweaking it to perform better.
+
 from snake.base import Direc
 from snake.solver.base import BaseSolver
 from snake.solver.path import PathSolver
@@ -60,6 +71,17 @@ class HamiltonSolver(BaseSolver):
                     if nxt_idx_rel > head_idx_rel and nxt_idx_rel <= food_idx_rel:
                         nxt_direc = path[0]
 
+        # incorporating the almighty move (experimental)
+        # if self.snake.len() > 0.5 * self.map.capacity:
+        #       self._path_solver = PathSolver(almighty);
+        #       
+        # if not (len(path) == 1 and abs(food_idx - tail_idx) == 1):
+                    # head_idx_rel = self._relative_dist(tail_idx, head_idx, self.map.capacity)
+                    # nxt_idx_rel = self._relative_dist(tail_idx, nxt_idx, self.map.capacity)
+                    # food_idx_rel = self._relative_dist(tail_idx, food_idx, self.map.capacity)
+                    # if nxt_idx_rel > head_idx_rel and nxt_idx_rel <= food_idx_rel:
+                    #     nxt_direc = path[0]
+
         return nxt_direc
 
     def _build_cycle(self):
@@ -71,7 +93,8 @@ class HamiltonSolver(BaseSolver):
             self._table[cur.x][cur.y].direc = direc
             cur = cur.adj(direc)
             cnt += 1
-        # Process snake bodies
+        # Process snake bodies so we can check if the path the snake is following
+        # is correct.
         cur = self.snake.tail()
         for _ in range(self.snake.len() - 1):
             self._table[cur.x][cur.y].idx = cnt
