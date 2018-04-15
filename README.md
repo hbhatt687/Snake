@@ -30,12 +30,6 @@ $ pip3 install -r requirements.txt
 $ python3 run.py [-h]
 ```
 
-Run unit tests:
-
-```
-$ python3 -m pytest -v
-```
-
 ## License
 
 See the [LICENSE](./LICENSE) file for license rights and limitations.
