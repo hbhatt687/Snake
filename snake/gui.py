@@ -13,7 +13,7 @@ class GameWindow(tk.Tk):
     def __init__(self, title, conf, game_map, game=None, on_exit=None, keybindings=None):
         super().__init__()
         super().title(title)
-        super().resizable(width=False, height=False)
+        super().resizable(width=True, height=True)
         super().configure(background=conf.color_bg)
         if conf.show_info_panel:
             super().geometry("%dx%d" % (conf.window_width, conf.window_height))

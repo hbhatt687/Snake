@@ -50,13 +50,13 @@ class GameConf:
         self.interval_draw_max = 200  # ms
 
         # Color
-        self.color_bg = '#000000'
-        self.color_txt = '#F5F5F5'
-        self.color_line = '#424242'
+        self.color_bg = '#FFFFFF'
+        self.color_txt = '#000000'
+        self.color_line = '#000000'
         self.color_wall = '#F5F5F5'
-        self.color_food = '#FFF59D'
-        self.color_head = '#F5F5F5'
-        self.color_body = '#F5F5F5'
+        self.color_food = '#A800B5'
+        self.color_head = '#FF0000'
+        self.color_body = '#000000'
 
         # Initial snake
         self.init_direc = Direc.RIGHT

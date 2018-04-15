@@ -2,13 +2,13 @@
 
 [![][badge-travis]][build-travis] [![][badge-appveyor]][build-appveyor] ![][badge-python]
 
-This project focuses on the artificial intelligence of the [Snake][wiki-snake] game. The snake's goal is to eat the food continuously and fill the map with its bodies ASAP. The [old version][snake-proj-old] of this project is written in C++. Now it has been rewritten using Python for a user-friendly GUI and the simplicity in the implementations of algorithms.
+This project focuses on the artificial intelligence of the [Snake][wiki-snake] game. The snake's goal is to eat the food continuously and fill the map with its bodies. Huge thanks to [Chuyang Liu][Chuyang-Liu] for his implementation of the game on python3. This is being tweaked to add implementations of the "almighty move" and random moves in order to make the snake more effeicient. 
 
-***[Algorithm Details >][doc-algorithms]***
+***[Algorithm Research >][doc-algorithms]***
 
 ## Experiments
 
-We use two metrics to evaluate the performance of an AI:
+I used two metrics to evaluate the performance of an AI:
 
 1. **Average Length:** Average length the snake has grown to (*max:* 64).
 2. **Average Steps:** Average steps the snake has moved.
@@ -18,8 +18,6 @@ Test results (averaged over 1000 episodes):
 | Solver | Demo (optimal) | Average Length | Average Steps |
 | :----: | :------------: | :------------: | :-----------: |
 |[Hamilton][doc-hamilton]|![][demo-hamilton]|63.93|717.83|
-|[Greedy][doc-greedy]|![][demo-greedy]|60.15|904.56|
-|[DQN][doc-dqn]<br>(experimental)|![][demo-dqn]|24.44|131.69|
 
 ## Installation
 
@@ -53,7 +51,7 @@ See the [LICENSE](./LICENSE) file for license rights and limitations.
 
 [wiki-snake]: https://en.wikipedia.org/wiki/Snake_(video_game)
 [doc-tkinter]: https://docs.python.org/3.6/library/tkinter.html
-[doc-algorithms]: ./docs/algorithms.md
+[doc-algorithms]: https://drive.google.com/file/d/1FH6NLQPb8pSsNYN9Uz0NCItUayFHZlZu/view?usp=sharing
 [doc-greedy]: ./docs/algorithms.md#greedy-solver
 [doc-hamilton]: ./docs/algorithms.md#hamilton-solver
 [doc-dqn]: ./docs/algorithms.md#dqn-solver
@@ -61,3 +59,4 @@ See the [LICENSE](./LICENSE) file for license rights and limitations.
 [demo-hamilton]: ./docs/images/solver_hamilton.gif
 [demo-greedy]: ./docs/images/solver_greedy.gif
 [demo-dqn]: ./docs/images/solver_dqn.gif
+[Chuyang-Liu]: https://github.com/chuyangliu
