@@ -16,9 +16,6 @@ from snake.solver import  HamiltonSolver
 class GameMode(Enum):
     NORMAL = 0         # AI with GUI
     BENCHMARK = 1      # Run benchmarks without GUI
-    TRAIN_DQN = 2      # Train DQNSolver without GUI
-    TRAIN_DQN_GUI = 3  # Train DQNSolver with GUI
-
 
 class GameConf:
 
@@ -29,7 +26,7 @@ class GameConf:
         self.mode = GameMode.NORMAL
 
         # Solver
-        self.solver_name = 'HamiltonSolver'  # Class name of the solver
+        self.solver_name = 'Hamiltonian Solver with Shortcuts'  # Class name of the solver
 
         # Size
         self.map_rows = 8
@@ -100,87 +97,19 @@ class Game:
         return self._episode
 
     def run(self):
-        if self._conf.mode == GameMode.BENCHMARK:
-            self._run_benchmarks()
-        elif self._conf.mode == GameMode.TRAIN_DQN:
-            self._run_dqn_train()
+        window = GameWindow("Snake", self._conf, self._map, self, self._on_exit, (
+            ('<w>', lambda e: self._update_direc(Direc.UP)),
+            ('<a>', lambda e: self._update_direc(Direc.LEFT)),
+            ('<s>', lambda e: self._update_direc(Direc.DOWN)),
+            ('<d>', lambda e: self._update_direc(Direc.RIGHT)),
+            ('<r>', lambda e: self._reset()),
+            ('<space>', lambda e: self._toggle_pause())
+        ))
+        if self._conf.mode == GameMode.NORMAL:
+            window.show(self._game_main_normal)
+        elif self._conf.mode == GameMode.TRAIN_DQN_GUI:
+            window.show(self._game_main_dqn_train)
             self._plot_history()
-        else:
-            window = GameWindow("Snake", self._conf, self._map, self, self._on_exit, (
-                ('<w>', lambda e: self._update_direc(Direc.UP)),
-                ('<a>', lambda e: self._update_direc(Direc.LEFT)),
-                ('<s>', lambda e: self._update_direc(Direc.DOWN)),
-                ('<d>', lambda e: self._update_direc(Direc.RIGHT)),
-                ('<r>', lambda e: self._reset()),
-                ('<space>', lambda e: self._toggle_pause())
-            ))
-            if self._conf.mode == GameMode.NORMAL:
-                window.show(self._game_main_normal)
-            elif self._conf.mode == GameMode.TRAIN_DQN_GUI:
-                window.show(self._game_main_dqn_train)
-                self._plot_history()
-
-    def _run_benchmarks(self):
-        STEPS_LIMIT = 5000
-        NUM_EPISODES = int(input("Please input the number of episodes: "))
-
-        print("\nMap size: %dx%d" % (self._conf.map_rows, self._conf.map_cols))
-        print("Solver: %s\n" % self._conf.solver_name[:-6].lower())
-
-        tot_len, tot_steps = 0, 0
-
-        for _ in range(NUM_EPISODES):
-            print("Episode %d - " % self._episode, end="")
-            while True:
-                self._game_main_normal()
-                if self._map.is_full():
-                    print("FULL (len: %d | steps: %d)"
-                          % (self._snake.len(), self._snake.steps))
-                    break
-                elif self._snake.dead:
-                    print("DEAD (len: %d | steps: %d)"
-                          % (self._snake.len(), self._snake.steps))
-                    break
-                elif self._snake.steps >= STEPS_LIMIT:
-                    print("STEP LIMIT (len: %d | steps: %d)"
-                          % (self._snake.len(), self._snake.steps))
-                    self._write_logs()  # Write the last step
-                    break
-            tot_len += self._snake.len()
-            tot_steps += self._snake.steps
-            self._reset()
-
-        avg_len = tot_len / NUM_EPISODES
-        avg_steps = tot_steps / NUM_EPISODES
-        print("\n[Summary]\nAverage Length: %.2f\nAverage Steps: %.2f\n"
-              % (avg_len, avg_steps))
-
-        self._on_exit()
-
-    def _run_dqn_train(self):
-        try:
-            while not self._game_main_dqn_train():
-                pass
-        except KeyboardInterrupt:
-            pass
-        except Exception:
-            traceback.print_exc()
-        finally:
-            self._on_exit()
-
-    def _game_main_dqn_train(self):
-        if not self._map.has_food():
-            self._map.create_rand_food()
-
-        if self._pause:
-            return
-
-        episode_end, learn_end = self._solver.train()
-
-        if episode_end:
-            self._reset()
-
-        return learn_end
 
     def _game_main_normal(self):
         if not self._map.has_food():

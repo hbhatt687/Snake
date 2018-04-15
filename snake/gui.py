@@ -66,25 +66,6 @@ class GameWindow(tk.Tk):
                        bg=self._conf.color_bg,
                        font=self._conf.font_info).pack(side=tk.TOP, anchor=tk.W)
 
-            scale = tk.Scale(frm,
-                             font=self._conf.font_info,
-                             fg=self._conf.color_txt,
-                             bg=self._conf.color_bg,
-                             highlightthickness=0,
-                             from_=self._conf.interval_draw_max,
-                             to=0,
-                             orient=tk.HORIZONTAL,
-                             length=self._conf.window_width - self._conf.map_width,
-                             showvalue=False,
-                             tickinterval=0,
-                             resolution=1,
-                             command=self._update_speed)
-            scale.pack(side=tk.TOP, anchor=tk.W)
-            scale.set(self._conf.interval_draw)
-
-    def _update_speed(self, speed):
-        self._conf.interval_draw = int(speed)
-
     def _init_keybindings(self, keybindings, on_destroy):
         self.bind('<Escape>', lambda e: on_destroy())
         self.protocol('WM_DELETE_WINDOW', on_destroy)

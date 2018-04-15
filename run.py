@@ -7,16 +7,11 @@ import argparse
 from snake.game import Game, GameConf, GameMode
 
 dict_solver = {
-    "greedy": "GreedySolver",
     "hamilton": "HamiltonSolver",
-    "dqn": "DQNSolver",
 }
 
 dict_mode = {
     "normal": GameMode.NORMAL,
-    "bcmk": GameMode.BENCHMARK,
-    "train_dqn": GameMode.TRAIN_DQN,
-    "train_dqn_gui": GameMode.TRAIN_DQN_GUI,
 }
 
 parser = argparse.ArgumentParser(description="Run snake game agent.")
