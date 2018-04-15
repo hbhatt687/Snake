@@ -56,7 +56,5 @@ See the [LICENSE](./LICENSE) file for license rights and limitations.
 [doc-hamilton]: ./docs/algorithms.md#hamilton-solver
 [doc-dqn]: ./docs/algorithms.md#dqn-solver
 
-[demo-hamilton]: ./docs/images/solver_hamilton.gif
-[demo-greedy]: ./docs/images/solver_greedy.gif
-[demo-dqn]: ./docs/images/solver_dqn.gif
+[demo-hamilton]: ./images/solver_hamilton.gif
 [Chuyang-Liu]: https://github.com/chuyangliu
