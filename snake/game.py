@@ -9,7 +9,7 @@ from enum import Enum, unique
 
 from snake.base import Direc, Map, PointType, Pos, Snake
 from snake.gui import GameWindow
-from snake.solver import DQNSolver, GreedySolver, HamiltonSolver
+from snake.solver import  HamiltonSolver
 
 
 @unique
