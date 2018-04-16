@@ -45,7 +45,7 @@ See the [LICENSE](./LICENSE) file for license rights and limitations.
 
 [wiki-snake]: https://en.wikipedia.org/wiki/Snake_(video_game)
 [doc-tkinter]: https://docs.python.org/3.6/library/tkinter.html
-[doc-algorithms]: https://drive.google.com/file/d/1FH6NLQPb8pSsNYN9Uz0NCItUayFHZlZu/view?usp=sharing
+[doc-algorithms]: https://drive.google.com/file/d/1BDBNLtAg59cRByEsCZ1yTsdR8S1I1euV/view?usp=sharing
 [doc-greedy]: ./docs/algorithms.md#greedy-solver
 [doc-hamilton]: ./docs/algorithms.md#hamilton-solver
 [doc-dqn]: ./docs/algorithms.md#dqn-solver
